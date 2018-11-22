@@ -1,0 +1,4 @@
+applications:
+- name: scalio_api
+  memory: 128M
+  instances: 1

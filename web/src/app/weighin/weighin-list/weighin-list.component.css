@@ -1,0 +1,13 @@
+
+.element {
+    background-color: #f3f3f3;
+    font-size: 125%;
+    margin: 10px 0;
+    padding: 4px 6px;
+}
+
+.weighInDate {
+    font-size: 75%;
+    font-style: italic;
+    padding-left: 30px;
+}

@@ -1,0 +1,15 @@
+<h1>
+    Create an account!
+</h1>
+<div>
+    Already have one? Click <a href="/login">here!</a>
+</div>
+<div>
+    username
+    <input [(ngModel)]="username">
+</div>
+<div>
+    password
+    <input type="password" [(ngModel)]="password">
+</div>
+<button (click)="handleRegistration()">Register</button>

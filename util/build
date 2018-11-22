@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+pushd web
+    ng build --prod
+    echo 'pushstate: enabled' > ./dist/web/Staticfile
+popd

@@ -1,0 +1,10 @@
+<div *ngFor="let weighIn of getWeighInListForDisplay()">
+    <div class="element">
+        <span>
+            {{weighIn.weight}}
+        </span>
+        <span class="weighInDate">
+            {{formatWeighinTimestamp(weighIn.date)}}
+        </span>
+    </div>
+</div>

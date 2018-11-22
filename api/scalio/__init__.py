@@ -1,0 +1,1 @@
+from scalio.app import app

@@ -1,0 +1,13 @@
+.averageNumber {
+    font-size: 200%;
+    font-weight: bold;
+}
+
+.averageSubtext {
+    font-style: italic;
+    color: #8e8e8e;
+}
+
+.average {
+    padding: 10px 0px;
+}
