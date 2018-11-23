@@ -1,5 +1,6 @@
-from scalio.util import webtoken
 from jwt.exceptions import DecodeError
+
+from scalio.util import webtoken
 
 
 def get_username_from_request(request):

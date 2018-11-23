@@ -1,7 +1,7 @@
 from flask_restful import Resource, request, fields, marshal_with
 
-from scalio.util import requtil
 from scalio.users.model import User
+from scalio.util import requtil
 
 
 class CalculationAverageResource(Resource):

@@ -1,7 +1,8 @@
 import unittest
+
 from scalio.app import app
-from scalio.datasource.repository import Repository
 from scalio.app import db
+
 
 class TestCase(unittest.TestCase):
 

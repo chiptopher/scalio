@@ -1,7 +1,7 @@
-from test.setup.testcase import TestCase
-from scalio.util import webtoken
-from test.user import create_user
 import datetime
+
+from scalio.util import webtoken
+from test.setup.testcase import TestCase
 
 
 class UserRegistrationTestCase(TestCase):

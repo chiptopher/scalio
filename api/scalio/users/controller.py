@@ -1,8 +1,9 @@
-from flask_restful import Resource, reqparse, request
-from scalio.users.model import User
 import bcrypt
-from scalio.util.webtoken import build_token
+from flask_restful import Resource, reqparse, request
+
+from scalio.users.model import User
 from scalio.util import requtil
+from scalio.util.webtoken import build_token
 
 parser = reqparse.RequestParser()
 parser.add_argument('username', help='This field cannot be blank', required=True)

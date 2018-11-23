@@ -1,5 +1,6 @@
-from scalio.util.webtoken import build_token
 from functools import wraps
+
+from scalio.util.webtoken import build_token
 
 
 def create_weigh_in_for_user(weigh_in: dict, username: str):

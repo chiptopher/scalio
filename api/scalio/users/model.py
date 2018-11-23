@@ -1,8 +1,9 @@
+from datetime import timedelta
+
 from scalio.app import db
 from scalio.datasource.repository import Repository
 from scalio.users.settings.model import UserSettings
 from scalio.util.timestamp import time_in_millis
-from datetime import timedelta
 
 
 class User(db.Model, Repository):

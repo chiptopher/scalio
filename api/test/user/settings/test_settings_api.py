@@ -1,5 +1,5 @@
-from test.setup.testcase import TestCase
 from scalio.util.webtoken import build_token
+from test.setup.testcase import TestCase
 
 
 class UserSettingsEdit(TestCase):

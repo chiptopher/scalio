@@ -1,7 +1,8 @@
 import os
 import unittest
-from scalio.util.env_engine import EnvironmentEngine, EnvironmentException
 from os.path import join, abspath
+
+from scalio.util.env_engine import EnvironmentEngine, EnvironmentException
 
 
 class EnvironmentEngineTest(unittest.TestCase):

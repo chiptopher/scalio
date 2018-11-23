@@ -1,6 +1,7 @@
+from flask_restful import fields
+
 from scalio.app import db
 from scalio.datasource.repository import Repository
-from flask_restful import fields
 
 
 class UserSettings(db.Model, Repository):

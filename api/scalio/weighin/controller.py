@@ -1,10 +1,9 @@
 from flask_restful import Resource, reqparse, marshal_with
 from flask_restful import request
 
-from scalio.weighin.model import WeighIn
 from scalio.users.model import User
-from scalio.util.timestamp import convert_date_to_timestamp
 from scalio.util import requtil
+from scalio.weighin.model import WeighIn
 
 weigh_in_create_reqparser = reqparse.RequestParser()
 weigh_in_create_reqparser.add_argument('date', help='This field cannot be blank', required=True)

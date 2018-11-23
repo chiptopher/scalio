@@ -1,12 +1,11 @@
-from math import isclose
-from decimal import Decimal
 import datetime
+from decimal import Decimal
+from math import isclose
 
+from scalio.util.webtoken import build_token
+from scalio.weighin.model import WeighIn
 from test.setup.testcase import TestCase
 from test.user import create_user
-from scalio.weighin.model import WeighIn
-from scalio.util.webtoken import build_token
-from scalio.users.model import User
 from test.weighin import create_weigh_in_for_user
 
 

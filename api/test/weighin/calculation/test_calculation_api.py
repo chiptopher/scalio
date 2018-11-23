@@ -1,9 +1,10 @@
+import datetime
+
+from scalio.util.timestamp import time_in_millis
+from scalio.util.webtoken import build_token
 from test.setup.testcase import TestCase
 from test.user import create_user
 from test.weighin import create_weigh_in_for_user
-from scalio.util.webtoken import build_token
-from scalio.util.timestamp import time_in_millis
-import datetime
 
 
 class CalculationResourceApiTest(TestCase):

@@ -1,5 +1,6 @@
-from scalio.app import db
 from flask_restful import fields
+
+from scalio.app import db
 from scalio.datasource.repository import Repository
 
 

@@ -1,12 +1,11 @@
-from flask import Flask
-from flask_restful import Resource, Api
-from sqlalchemy.exc import SQLAlchemyError, IntegrityError
-from flask_sqlalchemy import SQLAlchemy
-from flask_cors import CORS
-from scalio.util.env import env
-
-
 import logging
+
+from flask import Flask
+from flask_cors import CORS
+from flask_restful import Resource, Api
+from flask_sqlalchemy import SQLAlchemy
+
+from scalio.util.env import env
 
 logging.basicConfig()
 

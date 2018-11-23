@@ -1,7 +1,8 @@
 from flask_restful import Resource, request, reqparse, marshal_with
-from scalio.util import requtil
+
 from scalio.users.model import User
 from scalio.users.settings.model import UserSettings
+from scalio.util import requtil
 
 edit_settings_parser = reqparse.RequestParser()
 edit_settings_parser.add_argument('rolling_average_days', help='Cannot be empty', required=True)

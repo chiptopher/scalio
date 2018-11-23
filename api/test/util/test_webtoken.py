@@ -1,8 +1,10 @@
-import unittest
-from scalio.util import webtoken
-import jwt
 import datetime
+import unittest
 from datetime import timezone
+
+import jwt
+
+from scalio.util import webtoken
 
 
 def current_millis():

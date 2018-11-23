@@ -1,5 +1,6 @@
-import jwt
 import datetime
+
+import jwt
 
 
 def build_token(username: str,

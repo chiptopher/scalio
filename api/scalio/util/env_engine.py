@@ -1,6 +1,7 @@
 
-from os.path import abspath, join
 import os
+from os.path import abspath, join
+
 import yaml
 
 

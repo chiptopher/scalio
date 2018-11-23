@@ -1,5 +1,5 @@
-from test.setup.testcase import TestCase
 from scalio.users.model import User
+from test.setup.testcase import TestCase
 
 
 class TestUser(TestCase):
