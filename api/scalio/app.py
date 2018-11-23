@@ -9,7 +9,6 @@ from scalio.util.env import env
 import logging
 
 logging.basicConfig()
-logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
 
 app = Flask(__name__)
 # A mysql connection string would look something like this: mysql+mysqlconnector://root:password@localhost/mydatabase
