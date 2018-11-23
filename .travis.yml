@@ -15,3 +15,5 @@ deploy:
   organization: chrisboyerdev-org
   space: development
   on:
+    repo: chiptopher/scalio
+    branch: master
