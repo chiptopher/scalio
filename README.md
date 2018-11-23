@@ -2,7 +2,7 @@
 
 > weight tracking web app that show progression over time
 
-`scalio` is a web app allowing you to keep track of your weight loss project over time. Click [here]() to create an account and get counting, or look below if you want to run or contribute to the project yourself!
+`scalio` is a web app allowing you to keep track of your weight loss project over time. Click [here](https://scalioweb.cfapps.io/register) to create an account and get counting, or look below if you want to run or contribute to the project yourself!
 
 [![Build Status](https://travis-ci.org/chiptopher/scalio.svg?branch=master)](https://travis-ci.org/chiptopher/scalio)
 
