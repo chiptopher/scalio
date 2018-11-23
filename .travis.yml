@@ -1,17 +1,17 @@
 language: python
 python:
-- "3.6"
+- '3.6'
 node_js:
-  - "node"
+- node
 script:
-  - "./util/travis"
+- "./util/travis"
 deploy:
   skip_cleanup: true
   provider: cloudfoundry
   api: https://api.run.pivotal.io
   username: chrisboyerdev@gmail.com
   password:
-    secure: g9a/DUXWsyuBm1m2wMWvWM33ebdHWavAsddGbMVm9v1/fHhvxn1/wKW/MxOydyyTY5ULtpfKrbsgwbdkGbKtGZlr1CYlEd7lC6dtyjLdf3LEY/gFM1Si9JIQ52pzUqZxaHA71InZlu412xMRjzrwn7j2UURhzIkd3WgDoAzJBWNDy9ojCzHMr07GPcplPpf/VX/Nq9cGDMafaErcBSdaqwq1wClwRzCRJrTFCVRiBhe+QtYJ7FtKFHGsVXfH9pLoOAHR0eg0me7loEwDGvn+4o7mirx2dpfSqD4PvxKgtJM7BNFEBNfWA6n6AxsHUFT3wV/Ikof66yJn7xQlWnVLuK++k1BS9Jg1eYrc1/ir75JMbYUkllD6p0okGXqpnNG4AbTP+EF5caqBvMw/SPbOpDok2b8tIYWKcmIF6HzNfnWLMFsu1GYP1BR8CPRxcr6BLmErQH+gY/dOqBBdn2fJ9oNBwxg/mvArOBJO3s4e4cDBQzugnMrpaKWQ3OPnh2EgWIoQSQbjyo1tmWCCYCMCZ9ySqh9gZYQRjygf39+/S1M6BXUdyaFmCbJsDGUEPhoO7+DGAX8ywIiLNTrcieVt4uJ1AI5f9I/oqjNPWewi/tou1Za8CBuoOP2SPKpJ7fGz5SLZytLqUJgoVd6qyDkxszNsmymvqO8bZpKUhzVjFlA=
+    secure: GE1sbCTavSCkWGDmqq+h48UGTA0AyQxQC5Sj/zT93U6OMunOJe3QReSYbDa2BnXPxoxasfjbt6/9fTkdJWsvLEUWlvWTgIg/NCUWZpiRFoDDB4ftc0l1N+E3ycIYsqQcnHsz2eHe5gO8o/I8tAWG4oCA+oESz/zx2iMQD7gFCGR2U9pxhLb+Lw7GOLtNlkmZGlEvyC5izBsndQv8HDVAouz0kNR0np4DrXp6OZrIn9QRwqE9YmjYqDb7HekonETzv3/t1BnTeRLn/+qmd8oHCscZEJJ6I66mfEO66sK1xWdaOsXnF/alyUYmQIwC5nrAM+9QNJJYrsiC+bTjjxo7vgJaQsd6RujBNEd2gpL1wJNbj5ZRZjc5YLDJhOMU9AnjkV5WSTSr7QM8y9Cw2qV2HgdY0xui3MUoKSJUCm2tkK6KG+kWkra+7hSfkgk7p1Y9Ts1Xjkq+RJBgRTB7gNyGgGhMLv5HvFIp52x+vmI0zvD8lX0KppSnguY0SZ+L/LMbtUMGAowRou94TGsT03WH81PEmdmKaTtqX+t9tytcf/XIZRLlP7esNSYXz3WPwDffDAesTaXD4suofKscivMtMu/k4lE5HCixpwOptNf1hZstGCdH5bxKCEg68KU+jipeD5zM6ao5lifUP/GlGmPp6NSQfpWfT+o+cCy+LWb8iio=
   organization: chrisboyerdev-org
   space: development
   on:
