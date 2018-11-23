@@ -4,6 +4,8 @@
 
 `scalio` is a web app allowing you to keep track of your weight loss project over time. Click [here]() to create an account and get counting, or look below if you want to run or contribute to the project yourself!
 
+[![Build Status](https://travis-ci.org/chiptopher/scalio.svg?branch=master)](https://travis-ci.org/chiptopher/scalio)
+
 ## Getting Started
 
 These instrcutions will get a copy of `scalio` running locally on your machine for developmen, testing, and trial purposes.
