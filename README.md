@@ -30,7 +30,7 @@ You're going to need these before you get started:
 #### Backend
 From the `api/` folder, run `python -m unittest discover test` to run all of the api tests.
 #### Frontend
-From the `web/` folder, run `npm run unit` to runn all of the front-end unit tests.
+From the `web/` folder, run `npm run unit` to run all of the front-end unit tests.
 
 ## Contributing
 Guidelines for contributions can be found [here](./docs/CONTRIBUTING.md) and our Code of Conduct can be found [here](./docs/CODE_OF_CONDUCT.md). Feel free to 
