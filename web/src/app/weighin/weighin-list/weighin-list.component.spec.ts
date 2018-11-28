@@ -41,4 +41,16 @@ describe('WeighinListComponent', () => {
         const result = component.getWeighInListForDisplay();
         expect(result.length).toBe(25);
     });
+
+    describe('formatWeighIn', () => {
+        it('should round weigh ins with long decimals to the first decimal place', () => {
+            expect(component.formatWeighInWeight(201.16)).toBe('201.2');
+        });
+        it('should pad no decimals to the first decimal place with a zero', () => {
+          expect(component.formatWeighInWeight(201)).toBe('201.0');
+        });
+        it('should do nothing to first decimal place number', () => {
+          expect(component.formatWeighInWeight(201.1)).toBe('201.1');
+        });
+    });
 });
