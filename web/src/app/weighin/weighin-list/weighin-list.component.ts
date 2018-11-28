@@ -36,4 +36,8 @@ export class WeighinListComponent implements OnInit {
         const weighInDate = new Date(timestamp);
         return `${weighInDate.getMonth()}-${weighInDate.getDay()}-${weighInDate.getFullYear()}`;
     }
+
+    formatWeighInWeight(weighInWeight: number): string {
+      return weighInWeight.toFixed(1) + '';
+    }
 }
