@@ -8,7 +8,6 @@ export class UrlInterceptor implements HttpInterceptor {
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-        console.log(environment);
         request = request.clone({
             url: environment.apiUrl + request.url
         });
