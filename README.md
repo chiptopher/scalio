@@ -8,7 +8,7 @@
 
 ## Getting Started
 
-These instrcutions will get a copy of `scalio` running locally on your machine for developmen, testing, and trial purposes.
+These instrcutions will get a copy of `scalio` running locally on your machine for development, testing, and trial purposes.
 
 ### Dependencies
 You're going to need these before you get started:
@@ -34,5 +34,5 @@ From the `web/` folder, run `npm run unit` to run all of the front-end unit test
 
 ## Contributing
 Guidelines for contributions can be found [here](./docs/CONTRIBUTING.md) and our Code of Conduct can be found [here](./docs/CODE_OF_CONDUCT.md). Feel free to 
-[open an issue](https://github.com/chiptopher/scalio/issues) if there are problems with **guet** or you want to submit a
+[open an issue](https://github.com/chiptopher/scalio/issues) if there are problems with `scalio` or you want to submit a
 feature request.
