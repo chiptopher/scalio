@@ -9,24 +9,26 @@ import {Router} from '@angular/router';
 })
 export class RegiserComponent implements OnInit {
 
+    username: string;
+    password: string;
+    registrationFailed: boolean;
+
     constructor(
         private router: Router,
         private loginService: LoginService
     ) {
+        this.registrationFailed = false;
     }
-
-    username: string;
-    password: string;
 
     ngOnInit() {
     }
 
     public handleRegistration() {
         this.loginService.register(this.username, this.password).subscribe(
-            (res) => {
+            () => {
                 this.router.navigate(['dashboard']);
-            }, (err) => {
-
+            }, () => {
+                this.registrationFailed = true;
             }
         );
     }
