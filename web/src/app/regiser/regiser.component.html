@@ -12,4 +12,7 @@
     password
     <input type="password" [(ngModel)]="password">
 </div>
+<div class="errorBox" *ngIf="registrationFailed">
+    <app-request></app-request>
+</div>
 <button (click)="handleRegistration()">Register</button>
