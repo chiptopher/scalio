@@ -11,11 +11,13 @@ export class LoginComponent implements OnInit {
 
     username: string;
     password: string;
+    loginFailed: boolean;
 
     constructor(
         private router: Router,
         private loginService: LoginService
     ) {
+        this.loginFailed = false;
     }
 
     ngOnInit() {
@@ -25,7 +27,7 @@ export class LoginComponent implements OnInit {
         this.loginService.login(this.username, this.password).subscribe((res) => {
             this.router.navigate(['/dashboard']);
         }, (err) => {
-            // do something I guess
+            this.loginFailed = true;
         });
     }
 
