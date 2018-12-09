@@ -1,0 +1,14 @@
+.requestInner {
+    background-color: #ff8a84;
+    padding: 1rem;
+    border-radius: .25rem;
+    border-style: solid;
+    border-width: .3rem;
+    border-color: #e67b76;
+}
+
+.requestOuter {
+    background-color: #ff8a84;
+    padding: .3rem;
+    border-radius: .25rem;
+}

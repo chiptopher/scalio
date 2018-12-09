@@ -29,11 +29,13 @@ export class LoginService {
                     'Content-Type': 'application/json'
                 })
             };
-            this.http.post<string>(url, {username: username, password: password}, httpOptions).subscribe(response => {
+            this.http.post<any>(url, {username: username, password: password}, httpOptions).subscribe(response => {
                 if (response) {
                     this.authService.setToken(`Bearer ${response['token']}`);
                 }
                 observer.next(response);
+            }, () => {
+                observer.error();
             });
         });
     }
