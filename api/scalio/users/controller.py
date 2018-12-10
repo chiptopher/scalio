@@ -1,5 +1,6 @@
 import bcrypt
 from flask_restful import Resource, reqparse, request
+import re
 
 from scalio.users.model import User
 from scalio.util import requtil
@@ -13,18 +14,34 @@ parser.add_argument('password', help='This field cannot be blank', required=True
 class UserRegistration(Resource):
     def post(self):
         data = parser.parse_args()
-        if User.find_by_username(data['username']):
+        email = data['username']
+        if not self._is_email(email):
+            return None, 400
+        if User.find_by_username(email):
             return {}, 400
         new_user = User(
-            email=data['username'],
+            email=email,
             password=bcrypt.hashpw(str.encode(data['password']), bcrypt.gensalt())
         )
         try:
             return {
-                'token': build_token(data['username'])
+                'token': build_token(email)
             }
         except:
             return {}, 500
+
+    def _is_email(self, email: str):
+        email_split_on_at = email.split('@')
+        if len(email_split_on_at) == 2:
+            domain = email_split_on_at[1]
+            if domain == 'localhost':
+                return True
+            domain_split_on_period = domain.split('.')
+            if len(domain_split_on_period) == 2:
+                return True
+            return False
+        else:
+            return False
 
 
 class UserLogin(Resource):

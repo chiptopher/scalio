@@ -25,6 +25,28 @@ class UserRegistrationTestCase(TestCase):
         ))
         self.assertEqual(400, response.status_code)
 
+    def test_email_must_conform_to_simple_formatting_rules(self):
+        response = self.app.post('/api/user/register', data=dict(
+            username='email@localhost',
+            password='password'
+        ))
+        self.assertEqual(200, response.status_code)
+        response = self.app.post('/api/user/register', data=dict(
+            username='email@email.com',
+            password='password'
+        ))
+        self.assertEqual(200, response.status_code)
+        response = self.app.post('/api/user/register', data=dict(
+            username='notanemail',
+            password='password'
+        ))
+        self.assertEqual(400, response.status_code)
+        response = self.app.post('/api/user/register', data=dict(
+            username='notanemail@notadomain',
+            password='password'
+        ))
+        self.assertEqual(400, response.status_code)
+
 
 class UserLoginTestCase(TestCase):
 
