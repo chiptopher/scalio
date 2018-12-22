@@ -38,7 +38,8 @@ class Ping(Resource):
 from scalio.users.controller import UserRegistration, UserLogin, UserAuthenticationApi
 from scalio.weighin.controller import WeighInResource, IndividualWeighIn
 from scalio.users.settings.controller import IndividualSettingsApi
-from scalio.weighin.calculation.controller import CalculationAverageResource
+from scalio.weighin.calculation.average_controller import CalculationAverageResource
+from scalio.weighin.calculation.average_list_controller import AveragesListApi
 api.add_resource(Ping, '/api')
 api.add_resource(UserRegistration, '/api/user/register')
 api.add_resource(UserLogin, '/api/user/login')
@@ -47,3 +48,4 @@ api.add_resource(IndividualWeighIn, '/api/weighin/<int:id>')
 api.add_resource(IndividualSettingsApi, '/api/user/settings')
 api.add_resource(UserAuthenticationApi, '/api/user/authenticated')
 api.add_resource(CalculationAverageResource, '/api/weighin/calculation/average')
+api.add_resource(AveragesListApi, '/api/weighin/calculation/list')
