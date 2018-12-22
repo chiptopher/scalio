@@ -46,6 +46,6 @@ class User(db.Model, Repository):
         last_date = sorted(self.weighIns, key=lambda x: x.date)[0].date
         average_over_time = []
         while from_time >= last_date:
-            average_over_time.append(self.get_weigh_in_average(from_time))
+            average_over_time.append(dict(weight=self.get_weigh_in_average(from_time), date=from_time))
             from_time = from_time - 86400000
         return average_over_time
