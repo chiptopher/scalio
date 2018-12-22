@@ -15,6 +15,9 @@ import { WeighInCreateButtonComponent } from './weighin/weigh-in-create-button/w
 import { WeighInCreateComponent } from './weighin/weigh-in-create/weigh-in-create.component';
 import {UrlInterceptor} from './util/http-interceptor.interceptor';
 import { RequestComponent } from './request/request.component';
+import { WeighInChartComponent } from './weighin/weigh-in-chart/weigh-in-chart.component';
+import {NgxChartsModule} from '@swimlane/ngx-charts';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [
@@ -26,12 +29,15 @@ import { RequestComponent } from './request/request.component';
         WeighInAverageComponent,
         WeighInCreateButtonComponent,
         WeighInCreateComponent,
-        RequestComponent
+        RequestComponent,
+        WeighInChartComponent
     ],
     imports: [
         HttpClientModule,
         BrowserModule,
+        NgxChartsModule,
         FormsModule,
+        BrowserAnimationsModule,
         RouterModule.forRoot([
             {path: 'dashboard', component: DashboardComponent, canActivate: [AccessGuardService]},
             {path: 'login', component: LoginComponent},

@@ -33,4 +33,9 @@ export class WeighInService {
         const httpOptions = this.authService.createHeadersWithAuthToken(this.authService.getToken());
         return this.http.post<any>('/api/weighin', weighIn, httpOptions);
     }
+
+    public getUserRollingAverageList(): Observable<[{weight: number, date: number}]> {
+        const httpOptions = this.authService.createHeadersWithAuthToken(this.authService.getToken());
+        return this.http.get<any>('/api/weighin/calculation/list', httpOptions);
+    }
 }
