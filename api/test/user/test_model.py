@@ -32,7 +32,7 @@ class TestUser(TestCase):
         user = User(email='email@localhost', password='password')
         weigh_in_1 = WeighIn(weight=100.0, date=timestamp.time_in_millis())
         weigh_in_2 = WeighIn(weight=200.0, date=timestamp.time_in_millis(
-            delta=datetime.timedelta(days=user.user_settings.rolling_average_days)))
+            delta=datetime.timedelta(days=8)))
         user.weighIns.append(weigh_in_1)
         user.weighIns.append(weigh_in_2)
-        self.assertAlmostEqual(200.0, user.get_weigh_in_average(timestamp.time_in_millis(delta=datetime.timedelta(days=1))))
+        self.assertAlmostEqual(200.0, user.get_weigh_in_average(timestamp.time_in_millis(delta=datetime.timedelta(days=8))))
