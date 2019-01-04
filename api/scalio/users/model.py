@@ -1,4 +1,4 @@
-from datetime import timedelta
+from datetime import timedelta, datetime
 
 from scalio.app import db
 from scalio.datasource.repository import Repository
@@ -33,7 +33,7 @@ class User(db.Model, Repository):
 
     def get_weigh_in_average(self, end_time: int = time_in_millis()):
         sorted_weigh_ins = sorted(self.weighIns, key=lambda x: x.date, reverse=True)
-        start_time = time_in_millis(delta=timedelta(days=self.user_settings.rolling_average_days))
+        start_time = end_time - (86400000 * self.user_settings.rolling_average_days)
         truncated_weigh_ins = [w for w in sorted_weigh_ins if start_time <= w.date <= end_time]
         result = 0.0
         try:
