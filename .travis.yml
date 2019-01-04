@@ -5,15 +5,3 @@ node_js:
 - node
 script:
 - "./util/travis"
-deploy:
-  skip_cleanup: true
-  provider: cloudfoundry
-  api: https://api.run.pivotal.io
-  username: chrisboyerdev@gmail.com
-  password:
-    secure: GE1sbCTavSCkWGDmqq+h48UGTA0AyQxQC5Sj/zT93U6OMunOJe3QReSYbDa2BnXPxoxasfjbt6/9fTkdJWsvLEUWlvWTgIg/NCUWZpiRFoDDB4ftc0l1N+E3ycIYsqQcnHsz2eHe5gO8o/I8tAWG4oCA+oESz/zx2iMQD7gFCGR2U9pxhLb+Lw7GOLtNlkmZGlEvyC5izBsndQv8HDVAouz0kNR0np4DrXp6OZrIn9QRwqE9YmjYqDb7HekonETzv3/t1BnTeRLn/+qmd8oHCscZEJJ6I66mfEO66sK1xWdaOsXnF/alyUYmQIwC5nrAM+9QNJJYrsiC+bTjjxo7vgJaQsd6RujBNEd2gpL1wJNbj5ZRZjc5YLDJhOMU9AnjkV5WSTSr7QM8y9Cw2qV2HgdY0xui3MUoKSJUCm2tkK6KG+kWkra+7hSfkgk7p1Y9Ts1Xjkq+RJBgRTB7gNyGgGhMLv5HvFIp52x+vmI0zvD8lX0KppSnguY0SZ+L/LMbtUMGAowRou94TGsT03WH81PEmdmKaTtqX+t9tytcf/XIZRLlP7esNSYXz3WPwDffDAesTaXD4suofKscivMtMu/k4lE5HCixpwOptNf1hZstGCdH5bxKCEg68KU+jipeD5zM6ao5lifUP/GlGmPp6NSQfpWfT+o+cCy+LWb8iio=
-  organization: chrisboyerdev-org
-  space: development
-  on:
-    repo: chiptopher/scalio
-    branch: master
