@@ -25,6 +25,17 @@ class UserRegistrationTestCase(TestCase):
         ))
         self.assertEqual(400, response.status_code)
 
+    def test_body_comes_back_empty_when_registering_same_user_twice(self):
+        self.app.post('/api/user/register', data=dict(
+            username='email@localhost',
+            password='password'
+        ))
+        response = self.app.post('/api/user/register', data=dict(
+            username='email@localhost',
+            password='password'
+        ))
+        self.assertIsNone(response.json)
+
     def test_email_must_conform_to_simple_formatting_rules(self):
         response = self.app.post('/api/user/register', data=dict(
             username='email@localhost',
@@ -46,6 +57,13 @@ class UserRegistrationTestCase(TestCase):
             password='password'
         ))
         self.assertEqual(400, response.status_code)
+
+    def test_invalid_email_returns_empty_body(self):
+        response = self.app.post('/api/user/register', data=dict(
+            username='notanemail@notadomain',
+            password='password'
+        ))
+        self.assertIsNone(response.json)
 
 
 class UserLoginTestCase(TestCase):
@@ -79,6 +97,24 @@ class UserLoginTestCase(TestCase):
             password='password'
         ))
         self.assertEqual(404, response.status_code)
+
+    def test_invalid_credentials_returns_empty_body(self):
+        self.app.post('/api/user/register', data=dict(
+            username='email@localhost',
+            password='password'
+        ))
+        response = self.app.post('/api/user/login', data=dict(
+            username='email@localhost',
+            password='incorrectpassword'
+        ))
+        self.assertIsNone(response.json)
+
+    def test_unregistered_username_returns_empty_body(self):
+        response = self.app.post('/api/user/login', data=dict(
+            username='email@localhost',
+            password='password'
+        ))
+        self.assertIsNone(response.json)
 
 
 class UserAuthenticatedApiTest(TestCase):
