@@ -18,7 +18,7 @@ class UserRegistration(Resource):
         if not self._is_email(email):
             return None, 400
         if User.find_by_username(email):
-            return {}, 400
+            return None, 400
         new_user = User(
             email=email,
             password=bcrypt.hashpw(str.encode(data['password']), bcrypt.gensalt())
@@ -28,7 +28,7 @@ class UserRegistration(Resource):
                 'token': build_token(email)
             }
         except:
-            return {}, 500
+            return None, 500
 
     def _is_email(self, email: str):
         email_split_on_at = email.split('@')
@@ -56,13 +56,13 @@ class UserLogin(Resource):
         data = parser.parse_args()
         user = User.find_by_username(data['username'])
         if not user:
-            return {}, 404
+            return None, 404
         if bcrypt.checkpw(data['password'].encode('utf-8'), self.convert_to_by_if_neccessary(user.password)):
             return {
                 'token': build_token(data['username'])
             }
         else:
-            return {}, 404
+            return None, 404
 
 
 class UserAuthenticationApi(Resource):
