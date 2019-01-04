@@ -31,11 +31,11 @@ class User(db.Model, Repository):
     def delete_all(cls):
         db.session.query(User).delete()
 
-    def get_weigh_in_average(self):
+    def get_weigh_in_average(self, end_time: int = time_in_millis()):
         sorted_weigh_ins = sorted(self.weighIns, key=lambda x: x.date, reverse=True)
-        rolling_average_cutoff_timestamp = time_in_millis(delta=timedelta(days=self.user_settings.rolling_average_days))
-        truncated_weigh_ins = [w for w in sorted_weigh_ins if w.date > rolling_average_cutoff_timestamp]
-        result = 0
+        start_time = time_in_millis(delta=timedelta(days=self.user_settings.rolling_average_days))
+        truncated_weigh_ins = [w for w in sorted_weigh_ins if start_time <= w.date <= end_time]
+        result = 0.0
         try:
             result = sum(weigh_in.weight for weigh_in in truncated_weigh_ins) / len(truncated_weigh_ins)
         except ZeroDivisionError:
