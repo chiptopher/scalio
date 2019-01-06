@@ -53,10 +53,17 @@ class WeightLossOverTimeApiTest(TestCase):
         date=time_in_millis(delta=datetime.timedelta(days=8))
     ), 'email@localhost')
     def test_calculate_change_over_time(self):
-        response = self.app.get('/api/weighin/calculation/delta?days=8', headers={'Authorization': 'Bearer ' + build_token('email@localhost')})
+        response = self.app.get('/api/weighin/calculation/delta?days=8',
+                                headers={'Authorization': 'Bearer ' + build_token('email@localhost')})
         self.assertEqual(200, response.status_code)
         self.assertEqual(-50, response.json['calculation'])
 
     def test_calculate_change_over_time_returns_bad_request_when_given_bad_token(self):
-        response = self.app.get('/api/weighin/calculation/delta?days=8', headers={'Authorization': 'Bearer ' + build_token('email@localhost')})
+        response = self.app.get('/api/weighin/calculation/delta?days=8',
+                                headers={'Authorization': 'Bearer ' + build_token('email@localhost')})
+        self.assertEqual(400, response.status_code)
+
+    def test_calculate_change_over_time_returns_bad_request_when_not_given_a_days_param(self):
+        response = self.app.get('/api/weighin/calculation/delta',
+                                headers={'Authorization': 'Bearer ' + build_token('email@localhost')})
         self.assertEqual(400, response.status_code)
