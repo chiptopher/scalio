@@ -56,3 +56,7 @@ class WeightLossOverTimeApiTest(TestCase):
         response = self.app.get('/api/weighin/calculation/delta?days=8', headers={'Authorization': 'Bearer ' + build_token('email@localhost')})
         self.assertEqual(200, response.status_code)
         self.assertEqual(-50, response.json['calculation'])
+
+    def test_calculate_change_over_time_returns_bad_request_when_given_bad_token(self):
+        response = self.app.get('/api/weighin/calculation/delta?days=8', headers={'Authorization': 'Bearer ' + build_token('email@localhost')})
+        self.assertEqual(400, response.status_code)
