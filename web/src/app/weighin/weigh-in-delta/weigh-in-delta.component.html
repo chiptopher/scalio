@@ -1,0 +1,12 @@
+<div>
+    <div class="title">
+        Weight change over {{days}} days:
+    </div>
+    <div *ngIf="delta" class="delta">
+        {{delta.calculation}}
+    </div>
+    <div>
+    <input [(ngModel)]="days" type="number">
+    </div>
+    <button (click)="getUserWeighInDelta()">Submit</button>
+</div>

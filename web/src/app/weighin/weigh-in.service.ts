@@ -3,6 +3,7 @@ import {HttpClient, HttpEvent} from '@angular/common/http';
 import {AuthService} from '../auth/auth.service';
 import {Observable} from 'rxjs';
 import {WeighIn} from './weighin';
+import {Calculation} from './calculation';
 
 @Injectable({
     providedIn: 'root'
@@ -32,5 +33,13 @@ export class WeighInService {
     public createUserWeighIn(weighIn: WeighIn): Observable<any> {
         const httpOptions = this.authService.createHeadersWithAuthToken(this.authService.getToken());
         return this.http.post<any>('/api/weighin', weighIn, httpOptions);
+    }
+
+    public getUserWeighInDelta(overDays: number): Observable<Calculation> {
+        const httpOption = this.authService.createHeadersWithAuthToken(this.authService.getToken());
+        httpOption['params'] = {
+            days: overDays
+        };
+        return this.http.get<Calculation>(`/api/weighin/calculation/delta`, httpOption);
     }
 }
