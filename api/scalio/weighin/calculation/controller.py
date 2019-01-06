@@ -17,14 +17,17 @@ class CalculationAverageResource(Resource):
 
 
 class CalculationOverTimeResource(Resource):
-    def get(self):
 
+    def get(self):
         parser = reqparse.RequestParser()
-        parser.add_argument('days', required=True)
+        parser.add_argument('days', required=True, help='This field is required')
         args = parser.parse_args()
 
         username = requtil.get_username_from_request(request)
         user = User.find_by_username(username)
+
+        if not user:
+            return None, 400
 
         end_time = timestamp.time_in_millis(delta=datetime.timedelta(days=int(args.days)))
 
