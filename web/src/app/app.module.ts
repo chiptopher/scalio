@@ -15,6 +15,7 @@ import { WeighInCreateButtonComponent } from './weighin/weigh-in-create-button/w
 import { WeighInCreateComponent } from './weighin/weigh-in-create/weigh-in-create.component';
 import {UrlInterceptor} from './util/http-interceptor.interceptor';
 import { RequestComponent } from './request/request.component';
+import { WeighInDeltaComponent } from './weighin/weigh-in-delta/weigh-in-delta.component';
 
 @NgModule({
     declarations: [
@@ -26,7 +27,8 @@ import { RequestComponent } from './request/request.component';
         WeighInAverageComponent,
         WeighInCreateButtonComponent,
         WeighInCreateComponent,
-        RequestComponent
+        RequestComponent,
+        WeighInDeltaComponent
     ],
     imports: [
         HttpClientModule,
