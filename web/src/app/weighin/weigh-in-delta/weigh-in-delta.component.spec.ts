@@ -1,11 +1,12 @@
 import {WeighInDeltaComponent} from './weigh-in-delta.component';
 import {WeighInService} from '../weigh-in.service';
 import {Subject} from 'rxjs';
+import {Calculation} from '../calculation';
 
 describe('WeighInDeltaComponent', () => {
     let component: WeighInDeltaComponent;
     let mockWeighInService: WeighInService;
-    let getSubject: Subject<number>;
+    let getSubject: Subject<Calculation>;
 
     beforeEach(() => {
         getSubject = new Subject();
@@ -28,7 +29,7 @@ describe('WeighInDeltaComponent', () => {
         it('should save the result on the component', () => {
             component.days = 30;
             component.getUserWeighInDelta();
-            getSubject.next(200.0);
+            getSubject.next({calculation: 200.0});
             expect(component.delta.calculation).toBe(200.0);
         });
     });
