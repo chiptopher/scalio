@@ -12,7 +12,7 @@ gunicorn==19.9.0
 itsdangerous==0.24
 Jinja2==2.10
 MarkupSafe==1.0
-mysql-connector==2.1.6
+mysql-connector==2.2.9
 passlib==1.7.1
 pycparser==2.19
 PyJWT==1.6.4
