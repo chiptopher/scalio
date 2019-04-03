@@ -8,6 +8,7 @@ class WeighIn(db.Model, Repository):
     @classmethod
     def delete_all(cls):
         db.session.query(WeighIn).delete()
+        db.session.commit()
 
     __tablename__ = 'weighin'
 

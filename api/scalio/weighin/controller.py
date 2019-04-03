@@ -4,6 +4,7 @@ from flask_restful import request
 from scalio.users.model import User
 from scalio.util import requtil
 from scalio.weighin.model import WeighIn
+from scalio.app import db
 
 weigh_in_create_reqparser = reqparse.RequestParser()
 weigh_in_create_reqparser.add_argument('date', help='This field cannot be blank', required=True)
@@ -30,6 +31,7 @@ class WeighInResource(Resource):
         user = User.find_by_username(username)
         weighIn = WeighIn(weight=float(args['weight']), date=args['date'])
         user.weighIns.append(weighIn)
+        db.session.commit()
         return None, 201
 
 

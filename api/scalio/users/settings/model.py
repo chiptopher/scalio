@@ -20,6 +20,7 @@ class UserSettings(db.Model, Repository):
     @classmethod
     def delete_all(cls):
         db.session.query(UserSettings).delete()
+        db.session.commit()
 
     @staticmethod
     def resource_fields():

@@ -19,12 +19,6 @@ api = Api(app)
 db = SQLAlchemy(app)
 
 
-@app.after_request
-def commit(response):
-    db.session.commit()
-    return response
-
-
 @app.before_first_request
 def create_tables():
     db.create_all()

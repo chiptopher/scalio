@@ -30,6 +30,7 @@ class User(db.Model, Repository):
     @classmethod
     def delete_all(cls):
         db.session.query(User).delete()
+        db.session.commit()
 
     def get_weigh_in_average(self, end_time: int = time_in_millis()):
         sorted_weigh_ins = sorted(self.weighIns, key=lambda x: x.date, reverse=True)

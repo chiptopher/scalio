@@ -5,7 +5,7 @@ from test.setup.testcase import TestCase
 class UserSettingsEdit(TestCase):
 
     def test_can_edit_user_settings(self):
-        self.create_user('email@localhost')
+        response = self.create_user('email@localhost')
         headers = {'Authorization': 'Bearer ' + build_token('email@localhost')}
         response = self.app.post('/api/user/settings', data=dict(
             rolling_average_days=4

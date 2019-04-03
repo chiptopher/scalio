@@ -4,6 +4,8 @@ from scalio.users.model import User
 from scalio.users.settings.model import UserSettings
 from scalio.util import requtil
 
+from scalio.app import db
+
 edit_settings_parser = reqparse.RequestParser()
 edit_settings_parser.add_argument('rolling_average_days', help='Cannot be empty', required=True)
 
@@ -19,6 +21,7 @@ class IndividualSettingsApi(Resource):
         if not user:
             return None, 404
         user.user_settings.rolling_average_days = data['rolling_average_days']
+        db.session.commit()
         return None, 200
 
     @marshal_with(UserSettings.resource_fields())
