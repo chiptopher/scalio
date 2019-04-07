@@ -5,5 +5,4 @@ pushd web
 popd
 
 pushd api
-    pip install -r requirements.txt
 popd

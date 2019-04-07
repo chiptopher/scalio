@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
 
 pushd api
-    python -m unittest discover test 2>&1 | tee unit_out.txt
-    if cat unit_out.txt| grep 'FAILED'
-    then
-        rm unit_out.txt
-        exit 1
-    fi
-    rm unit_out.txt
 popd
 pushd web
     if npm run unit | grep -E "ERROR|FAILED"

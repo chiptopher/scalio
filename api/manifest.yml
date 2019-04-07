@@ -1,4 +1,6 @@
 applications:
 - name: scalio_api
-  memory: 128M
+  memory: 768M
+  path: ./build/libs/saclio-0.0.1-SNAPSHOT.jar
+  buildpack: java_buildpack
   instances: 1
