@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 pushd api
+    ./gradlew clean test
 popd
 pushd web
     if npm run unit | grep -E "ERROR|FAILED"
