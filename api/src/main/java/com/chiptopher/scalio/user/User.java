@@ -15,6 +15,9 @@ public class User {
     private String username;
     private String password;
 
+    @Transient
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
     User() {
 
     }
@@ -43,7 +46,12 @@ public class User {
     }
 
     public User setPassword(String password) {
-        this.password = password;
+        this.password = this.bCryptPasswordEncoder.encode(password);
+        return this;
+    }
+
+    User setbCryptPasswordEncoder(BCryptPasswordEncoder bCryptPasswordEncoder) {
+        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
         return this;
     }
 }
