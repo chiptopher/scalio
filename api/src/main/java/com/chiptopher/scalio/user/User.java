@@ -1,9 +1,13 @@
 package com.chiptopher.scalio.user;
 
+import com.auth0.jwt.JWT;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.Date;
+
+import static com.auth0.jwt.algorithms.Algorithm.HMAC512;
 
 @Entity
 public class User {
@@ -17,6 +21,8 @@ public class User {
 
     @Transient
     private BCryptPasswordEncoder bCryptPasswordEncoder;
+    @Transient
+    private String jwtSecret;
 
     User() {
 
@@ -50,8 +56,20 @@ public class User {
         return this;
     }
 
+    public String generateToken() {
+        return JWT.create()
+                .withSubject(username)
+                .withExpiresAt(new Date(System.currentTimeMillis() + 864_000_000))
+                .sign(HMAC512(jwtSecret.getBytes()));
+    }
+
     User setbCryptPasswordEncoder(BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+        return this;
+    }
+
+    User setJwtSecret(String jwtSecret) {
+        this.jwtSecret = jwtSecret;
         return this;
     }
 }
